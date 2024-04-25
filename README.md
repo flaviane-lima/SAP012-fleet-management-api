@@ -51,9 +51,10 @@ em sua API REST.
 
 Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
 
-[OAS Java](docs/oas-java.md)
-[OAS Node](docs/oas-node.md)
-[OAS Python](docs/oas-java.md)
+- [OAS Java](docs/oas-java.md)
+- [OAS Node](docs/oas-node.md)
+- [OAS Python](docs/oas-java.md)
+
 
 
 ## 4. Considerações de carácter geral
