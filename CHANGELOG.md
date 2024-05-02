@@ -1,4 +1,4 @@
-## <versão> - <data>
+## <versão> - <01/05/2024>
 
 ### Aprendizados da Sprint
 
