@@ -1,0 +1,18 @@
+{
+  "name": "sap012-fleet-management-api",
+  "version": "1.0.0",
+  "description": "* [1. Preambulo](#1-preâmbulo)\r * [2. Resumo do projeto](#2-resumo-do-projeto)\r * [3. Objetivos de aprendizado](#3-objetivos-de-aprendizado)\r * [4. Considerações de carácter geral](#4-considerações-de-carácter-geral)\r * [5. Critérios de aceitação do projeto](#5-critérios-de-aceitação-do-projeto)\r * [6. Tecnologias Utilizadas](#6-tecnologias-utilizadas)\r * [7. Dicas, sugestões e leituras complementares](#7-dicas-sugestões-e-leituras-complementares)\r * [8. Funcionalidades opcionais](#8-funcionalidades-opcionais)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
