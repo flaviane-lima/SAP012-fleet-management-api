@@ -32,6 +32,7 @@ const server = app.listen(PORT, () => {
 
 // vai garantir que o prisma/client seja desconectado corretamente  e aplicação seja encerrada adequadamente.
 process.on('SIGINT', async () => {
+    console.log('SIGINT recebido');
     console.info('\nEncerrando o servidor...');
     await prisma.$disconnect();
     // esse serve é chamado para encerrar o servidor.
