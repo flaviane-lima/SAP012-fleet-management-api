@@ -1,5 +1,5 @@
 const { PrismaClient } = require('@prisma/client');
-// const { trace } = require('../routes/taxi');
+
 const prisma = new PrismaClient();
 
 
