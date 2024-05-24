@@ -2,11 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const { PrismaClient } = require('@prisma/client');
 const  taxiRouter = require('./routes/taxi');
+const  swaggerDocs = require('./swagger');
 
 const PORT = process.env.PORT || 4000;
 const HOSTNAME = process.env.HOSTNAME || 'http://localhost';
 const app = express();
 const prisma = new PrismaClient; // inicialização do prisma/client
+
+// configurando a documentação Swagger
+swaggerDocs(app);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
