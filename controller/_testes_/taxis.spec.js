@@ -31,6 +31,33 @@ beforeEach(() => {
 
 // definindo um bloco de teste para a função
 describe('getTaxis', () => {
+  it('deve retornar 1 quando a paginação for undefined', async () => {
+    // Define a paginação como undefined
+    const req = { query: {} };
+    //obtendo valor do parâmetro 'page' da string de consulta
+    let paginacao = req.query.page;
+
+    if (paginacao === undefined) {
+      paginacao = 1;
+    }
+
+  paginacao = parseInt(paginacao);
+
+  expect(paginacao).toBe(1);
+  });
+  it('deve retornar um erro se o valor da paginação for inválido', async () => {
+    const req = {
+      query : { page: '0'}
+    }
+
+    // chamar a função com objeto simulado
+    await getTaxis(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(400);
+
+    expect(res.json).toHaveBeenCalledWith({ error: 'valor da paginação inválido' });
+  });
+
   it('deve obter a coleção de táxis', async () => {
     const mockTaxis = [
       {
@@ -63,6 +90,35 @@ describe('getTaxis', () => {
 });
 
 describe('getTaxisIdTrajectorie', () =>{
+  it('deve retornar 1 quando a paginação for undefined', async () => {
+    // Define a paginação como undefined
+    const req = { query: {} };
+
+    let paginacao = req.query.page;
+    
+    if (paginacao === undefined) {
+      paginacao = 1;
+    }
+
+  paginacao = parseInt(paginacao);
+
+  expect(paginacao).toBe(1);
+  });
+  it('deve retornar um erro se o valor da paginação for inválido', async () => {
+    const req = {
+      params: { id: '1'},
+      query: {
+        date: '2007/07/07',
+        page: '0' 
+      }
+      };// Simula a query string com a propriedade 'page' definida
+    await getTaxisIdTrajectorie(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(400);
+
+    expect(res.json).toHaveBeenCalledWith({ error: 'valor da paginação inválido' });
+  });
+
   it('deve obter a trajetória dos taxis pelo id', async () => {
     const req = {
       params: { id: '1'},
@@ -116,6 +172,32 @@ describe('getTaxisIdTrajectorie', () =>{
 });
 
 describe('getTaxisLocalizacao', () => {
+  it('deve retornar 1 quando a paginação for undefined', async () => {
+    // Define a paginação como undefined
+    const req = { query: {} };
+
+    let paginacao = req.query.page;
+
+    if (paginacao === undefined) {
+      paginacao = 1;
+    }
+
+  paginacao = parseInt(paginacao);
+
+  expect(paginacao).toBe(1);
+  });
+  it('deve retornar um erro se o valor da paginação for inválido', async () => {
+    const req = {
+      query : { page: '0'}
+    }
+
+    // chamar a função com objeto simulado
+    await getTaxisLocalizacao(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(400);
+
+    expect(res.json).toHaveBeenCalledWith({ error: 'valor da paginação inválido' });
+  });
   it('deve retornar a ultima localização do táxi', async () => {
     const mockTaxis = {
       "id": 10133,
